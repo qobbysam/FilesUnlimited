@@ -25,17 +25,17 @@ This can scale horizontally really well for both rpc and restserver.
 Create a copy of config.Json
 
 
-Start with "./main -st="all" -c=path_to_config" 
+Start with "./main -st=all -c=path_to_config" 
 
 
 #### -st
 
-options
-    rest
+options <br>
+    rest <br>
         restserver
 
-options 
-    rpc 
+options <br>
+    rpc <br>
         rpc server
 
 
