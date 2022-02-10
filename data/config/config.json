@@ -1,0 +1,24 @@
+{
+    "minio" : {
+        "location": "us-east-1",
+        "accessurl": "minio.dealstagingapplication.ga",
+        "accesspoint": "someaccesskey",
+        "privatekey": "somesecretkey",
+        "usessl": true
+        
+    },
+    "buckets": {
+        "txt": "mytxt",
+        "pdf" : "mypdf",
+        "csv" : "mycsv",
+        "img": "myimg"
+    },
+    "rpc": {
+        "address": ":10015",
+        "addfunc": "RPCADDFUNC"
+    },
+    "restconfig": {
+        "mountstring":"/files",
+        "port": ":10012"
+    }
+}
