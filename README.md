@@ -1,6 +1,7 @@
 
 
-This is a file server written in GO.
+This is a file server written in GO. This is a good base for a micro service file server.
+This can fit in any other projects.
 
 
 
@@ -37,3 +38,6 @@ options
         rpc server
 
 -c config is optional . 
+
+
+### Already  in production
