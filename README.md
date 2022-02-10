@@ -1,5 +1,5 @@
 
-
+### FilesUnlimited
 This is a file server written in GO. This is a good base for a micro service file server.
 This can fit in any other projects.
 
@@ -20,7 +20,7 @@ This can scale horizontally really well for both rpc and restserver.
 
 
 
-###Basic Start
+### Basic Start
 
 Create a copy of config.Json
 
@@ -28,7 +28,8 @@ Create a copy of config.Json
 Start with "./main -st="all" -c=path_to_config" 
 
 
--st
+#### -st
+
 options
     rest
         restserver
@@ -37,7 +38,9 @@ options
     rpc 
         rpc server
 
--c config is optional . 
+
+#### -c 
+config is optional . 
 
 
 ### Already  in production
