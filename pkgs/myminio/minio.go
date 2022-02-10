@@ -11,8 +11,8 @@ import (
 	"github.com/minio/minio-go/v7"
 	"github.com/minio/minio-go/v7/pkg/credentials"
 
-	"github.com/qobbysam/fileserver/pkgs/config"
-	"github.com/qobbysam/fileserver/pkgs/executor"
+	"github.com/qobbysam/filesunlimited/pkgs/config"
+	"github.com/qobbysam/filesunlimited/pkgs/executor"
 )
 
 type MinioStruct struct {

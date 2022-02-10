@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/go-chi/chi"
-	"github.com/qobbysam/fileserver/pkgs/config"
-	"github.com/qobbysam/fileserver/pkgs/myminio"
+	"github.com/qobbysam/filesunlimited/pkgs/config"
+	"github.com/qobbysam/filesunlimited/pkgs/myminio"
 )
 
 type RestServer struct {

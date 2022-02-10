@@ -6,7 +6,7 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/cors"
 	"github.com/minio/minio-go/v7"
-	"github.com/qobbysam/fileserver/pkgs/myminio"
+	"github.com/qobbysam/filesunlimited/pkgs/myminio"
 )
 
 type RestMin struct {

@@ -5,11 +5,11 @@ import (
 	"log"
 	"sync"
 
-	"github.com/qobbysam/fileserver/pkgs/config"
-	"github.com/qobbysam/fileserver/pkgs/executor"
-	"github.com/qobbysam/fileserver/pkgs/myminio"
-	"github.com/qobbysam/fileserver/pkgs/restserver"
-	"github.com/qobbysam/fileserver/pkgs/rpcserver"
+	"github.com/qobbysam/filesunlimited/pkgs/config"
+	"github.com/qobbysam/filesunlimited/pkgs/executor"
+	"github.com/qobbysam/filesunlimited/pkgs/myminio"
+	"github.com/qobbysam/filesunlimited/pkgs/restserver"
+	"github.com/qobbysam/filesunlimited/pkgs/rpcserver"
 )
 
 type App struct {
@@ -139,5 +139,5 @@ func (ap *App) StartApp(wg sync.WaitGroup, donechan chan struct{}, errchan chan 
 		}()
 
 	}
-	//wg.Wait()
+	wg.Wait()
 }

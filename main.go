@@ -5,7 +5,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/qobbysam/fileserver/internal"
+	"github.com/qobbysam/filesunlimited/internal"
 )
 
 func main() {

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/qobbysam/fileserver/pkgs/config"
-	"github.com/qobbysam/fileserver/pkgs/myminio"
+	"github.com/qobbysam/filesunlimited/pkgs/config"
+	"github.com/qobbysam/filesunlimited/pkgs/myminio"
 	"github.com/smallnest/rpcx/server"
 )
 
@@ -78,7 +78,7 @@ type RpcObject struct {
 
 func (ro *RpcObject) RpcServe(donechan chan struct{}, errchan chan error) {
 
-	log.Println("serving rpc on port :  ", ro.Addr)
+	log.Println("serving rpc on port :  ", ro.Addr, " ", ro.ServerString)
 
 	err := ro.Server.Serve(ro.ServerString, ro.Addr)
 	if err != nil {

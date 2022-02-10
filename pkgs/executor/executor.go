@@ -2,7 +2,7 @@ package executor
 
 import (
 	"github.com/lithammer/shortuuid"
-	"github.com/qobbysam/fileserver/pkgs/config"
+	"github.com/qobbysam/filesunlimited/pkgs/config"
 )
 
 type ExBuckets struct {

@@ -4,7 +4,7 @@ import (
 	"log"
 	"sync"
 
-	"github.com/qobbysam/fileserver/pkgs/app"
+	"github.com/qobbysam/filesunlimited/pkgs/app"
 )
 
 func StartApp(startstring string, pathtoconfig string) {
@@ -27,5 +27,5 @@ func StartApp(startstring string, pathtoconfig string) {
 
 	app.StartApp(wg, donechan, errchan)
 
-	wg.Wait()
+	//wg.Wait()
 }

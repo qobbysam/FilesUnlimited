@@ -8,7 +8,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/qobbysam/fileserver/pkgs/rpcserver"
+	"github.com/qobbysam/filesunlimited/pkgs/rpcserver"
 	"github.com/smallnest/rpcx/client"
 )
 
