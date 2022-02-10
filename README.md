@@ -40,7 +40,7 @@ options <br>
 
 
 #### -c 
-config is optional . 
+ignore if config.json is in the same dir as executable
 
 
 ### Already  in production
