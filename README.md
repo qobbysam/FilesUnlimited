@@ -6,9 +6,9 @@ This is a file server written in GO.
 
 This application uses Minio for the the data location.
 
-You can serve files by rest server
+You can serve files from data location by rest server
 
-You can write to files by rpc 
+You can write files to data location  by rpc 
 
 
 
@@ -19,7 +19,7 @@ This can scale horizontally really well for both rpc and restserver.
 
 
 
-Basic Start
+###Basic Start
 
 Create a copy of config.Json
 
