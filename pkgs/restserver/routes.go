@@ -15,6 +15,7 @@ type RestMin struct {
 
 var GlobalMin *RestMin
 
+//Build Routes builds the rest routes with the config values
 func (rs *RestServer) BuildRoutes() error {
 
 	//router := chi.NewRouter()
@@ -23,7 +24,7 @@ func (rs *RestServer) BuildRoutes() error {
 		// AllowedOrigins:   []string{"https://foo.com"}, // Use this to allow specific origin hosts
 		//AllowedOrigins:   []string{"https://*", "http://*"},
 		AllowOriginFunc:  func(r *http.Request, origin string) bool { return true },
-		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
+		AllowedMethods:   []string{"GET"},
 		AllowedHeaders:   []string{"Accept", "Authorization", "Content-Type", "X-CSRF-Token"},
 		ExposedHeaders:   []string{"Link"},
 		AllowCredentials: false,

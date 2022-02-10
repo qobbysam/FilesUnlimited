@@ -24,6 +24,7 @@ func (rs *RestServer) Init() error {
 	return err
 }
 
+//This will start the RestServer
 func (rs *RestServer) StartServer(donechan chan struct{}, errchan chan error) {
 
 	err := rs.Init()

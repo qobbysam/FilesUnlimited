@@ -15,6 +15,8 @@ import (
 	"github.com/qobbysam/filesunlimited/pkgs/executor"
 )
 
+//Minio can be constructed as desired.
+//This struct is you main access point for minio
 type MinioStruct struct {
 	// Endpoint        string
 	// AccessKey       string
@@ -28,6 +30,7 @@ type MinioStruct struct {
 	//Buckets []string
 }
 
+//Save will save a file to a bucket in minio
 func (ms *MinioStruct) DoSave(bucketname, objectname string, file []byte, size int64, opts minio.PutObjectOptions) error {
 
 	reader := bytes.NewReader(file)
@@ -42,6 +45,7 @@ func (ms *MinioStruct) DoSave(bucketname, objectname string, file []byte, size i
 	return err
 }
 
+//Retrive file will get a file from a minio instance.
 func (ms *MinioStruct) RetrieveFile(name string, bucketname string, opts *minio.GetObjectOptions) (*GetFileResponse, error) {
 
 	file, err := ms.Client.GetObject(ms.Ctx, bucketname, name, *opts)
@@ -75,6 +79,8 @@ func (ms *MinioStruct) RetrieveFile(name string, bucketname string, opts *minio.
 	return &response, nil
 
 }
+
+//Return the Bucket name set from config file
 func (ms *MinioStruct) GetBucket(type_ string) string {
 
 	switch type_ {
@@ -92,6 +98,7 @@ func (ms *MinioStruct) GetBucket(type_ string) string {
 	}
 }
 
+//Delete a file in your Minio instance
 func (ms *MinioStruct) DeleteFile(file DeleteFileArg) (*DeleteFileResponse, error) {
 
 	name := file.Name
@@ -113,6 +120,7 @@ func (ms *MinioStruct) DeleteFile(file DeleteFileArg) (*DeleteFileResponse, erro
 
 }
 
+// This save file is used by Rpc Clients to save file
 func (ms *MinioStruct) SaveFile(tosave *SaveFileArg) (string, error) {
 
 	//ctx := context.Background()
@@ -211,6 +219,7 @@ func (ms *MinioStruct) Init() error {
 
 }
 
+//Create a new Minio Instance. If config is not complete in config.json, this will break
 func NewMinioStruct(cfg *config.BigConfig, exec *executor.Executor) (*MinioStruct, error) {
 
 	out := MinioStruct{}
@@ -242,50 +251,6 @@ func NewMinioStruct(cfg *config.BigConfig, exec *executor.Executor) (*MinioStruc
 
 		return nil, errors.New(msg)
 	}
-
-	// err = min.MakeBucket(ctx, bucketName, minio.MakeBucketOptions{Region: location})
-
-	// //err = minioClient.MakeBucket(ctx, bucketName, minio.MakeBucketOptions{Region: location})
-	// if err != nil {
-	// 	// Check to see if we already own this bucket (which happens if you run this twice)
-	// 	exists, errBucketExists := min.BucketExists(ctx, bucketName)
-	// 	if errBucketExists == nil && exists {
-	// 		log.Printf("We already own %s\n", bucketName)
-	// 	} else {
-	// 		log.Fatalln(err)
-	// 	}
-	// } else {
-	// 	log.Printf("Successfully created %s\n", bucketName)
-
-	// }
-
-	// ex, _ := os.Executable()
-
-	// basedir := filepath.Dir(ex)
-
-	// // Upload the zip file
-	// objectName := "test.pdf"
-	// outname := "out.pdf"
-	// filePath := filepath.Join(basedir, "data", "sfiles", objectName)
-	// outPath := filepath.Join(basedir, "data", "sfiles", outname)
-	// contentType := "application/pdf"
-
-	// // Upload the zip file with FPutObject
-	// info, err := min.FPutObject(ctx, bucketName, objectName, filePath, minio.PutObjectOptions{ContentType: contentType})
-	// if err != nil {
-	// 	log.Fatalln(err)
-	// }
-	// log.Println(info.ETag)
-	// log.Printf("Successfully uploaded %s of size %d\n", objectName, info.Size)
-	// log.Println(info.Key)
-
-	// err = min.FGetObject(context.Background(), bucketName, objectName, outPath, minio.GetObjectOptions{})
-	// if err != nil {
-	// 	fmt.Println(err)
-
-	// }
-
-	// log.Println("fileget sucess")
 
 	out.Client = min
 	out.Exec = exec

@@ -5,6 +5,7 @@ import (
 	"github.com/qobbysam/filesunlimited/pkgs/config"
 )
 
+//Executor will route requests to the correct buckets
 type ExBuckets struct {
 	Txt string `json:"txt"`
 	PDF string `json:"pdf"`
@@ -12,6 +13,7 @@ type ExBuckets struct {
 	IMG string `json:"img"`
 }
 
+//this will create a uniqie name for the file to be saved
 func (ex *ExBuckets) GenerateAName() string {
 
 	return shortuuid.New()
